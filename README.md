@@ -57,6 +57,8 @@
 4. 在`.env.local`中添加DeepSeek API密钥
    ```
    DEEPSEEK_API_KEY=your_api_key_here
+   DEEPSEEK_MODEL_NAME=deepseek-chat
+   DEEPSEEK_API_BASE_URL=https://api.deepseek.com/v1
    ```
 
 5. 启动开发服务器
@@ -64,7 +66,7 @@
    npm run dev
    ```
 
-应用将在 http://localhost:3000 上运行。
+应用将在 http://localhost:3001 上运行。
 
 ## 构建与部署
 
