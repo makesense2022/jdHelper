@@ -44,6 +44,9 @@ const FileUpload: React.FC<FileUploadProps> = ({ onTextExtracted, type, isLoadin
       console.log('正在上传文件到DeepSeek...');
       const response = await fetch('/api/pdf-to-deepseek', {
         method: 'POST',
+        headers: process.env.NEXT_PUBLIC_LEARN_API_KEY
+          ? { 'x-api-key': process.env.NEXT_PUBLIC_LEARN_API_KEY }
+          : {},
         body: formData,
       });
       

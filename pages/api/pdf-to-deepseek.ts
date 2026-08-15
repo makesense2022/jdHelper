@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import fs from 'fs';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.js';
+import { apiGuard } from '../../utils/api-guard';
 
 // 设置PDFJS的worker路径
 pdfjsLib.GlobalWorkerOptions.workerSrc = require.resolve('pdfjs-dist/legacy/build/pdf.worker.js');
@@ -69,6 +70,11 @@ async function extractTextFromPDF(pdfBuffer: Buffer): Promise<string> {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: '只支持POST请求' });
+  }
+
+  // 鉴权 + 限流,防止任意访客刷爆 DeepSeek 付费额度
+  if (!apiGuard(req, res)) {
+    return;
   }
 
   let uploadedFile: formidable.File | undefined;

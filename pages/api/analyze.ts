@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { analyzeResumeMatch } from '../../utils/matchResumeToJD';
+import { apiGuard } from '../../utils/api-guard';
 
 type ErrorResponse = {
   success: false;
@@ -16,6 +17,11 @@ export default async function handler(
       success: false,
       error: 'Method not allowed'
     } as ErrorResponse);
+  }
+
+  // 鉴权 + 限流,防止任意访客刷爆 DeepSeek 付费额度
+  if (!apiGuard(req, res)) {
+    return;
   }
 
   try {
