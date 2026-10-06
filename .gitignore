@@ -80,3 +80,6 @@ docs/foundation-validation.json
 **/private-data/
 **/secrets/
 **/credentials/
+
+# Local Vercel link and environment cache
+.vercel/
