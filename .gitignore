@@ -83,3 +83,6 @@ docs/foundation-validation.json
 
 # Local Vercel link and environment cache
 .vercel/
+
+# Machine-specific configuration stays local.
+project.private.config.json
