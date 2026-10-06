@@ -196,7 +196,7 @@ export default function Home() {
             <ul className="list-disc pl-5 mt-2 text-gray-600 space-y-1">
               <li>在文本框中<span className="font-medium">粘贴</span>您的简历内容和岗位描述</li>
               <li>或者<span className="font-medium">上传PDF文件</span>，系统会自动提取文本</li>
-              <li>点击"开始分析"获取匹配度评分和优化建议</li>
+              <li>点击&quot;开始分析&quot;获取匹配度评分和优化建议</li>
             </ul>
           </div>
         </div>

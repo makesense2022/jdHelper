@@ -34,4 +34,49 @@ yarn-error.log*
 .vercel
 
 # typescript
-*.tsbuildinfo 
+*.tsbuildinfo
+
+# Website foundation generated configuration
+.env*.local
+public/site-foundation-config.js
+docs/foundation-validation.json
+
+# Private source backup: generated caches and local credentials
+**/node_modules/
+**/.next/
+**/out/
+**/dist/
+**/dist-demo/
+**/dist-approved/
+**/build/
+**/.netlify/
+**/.open-next/
+**/.wrangler/
+**/.turbo/
+**/.cache/
+**/.pnpm-store/
+**/__pycache__/
+**/.venv/
+**/venv/
+**/playwright-report/
+**/test-results/
+**/coverage/
+**/.DS_Store
+**/*.tsbuildinfo
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.sample
+**/.dev.vars
+**/.dev.vars.*
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.keystore
+**/*.jks
+**/uploads/
+**/user-data/
+**/private-data/
+**/secrets/
+**/credentials/

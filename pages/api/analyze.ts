@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { analyzeResumeMatch } from '../../utils/matchResumeToJD';
+import { modelConfigurationReady } from '../../utils/model-config';
 import { apiGuard } from '../../utils/api-guard';
 
 type ErrorResponse = {
@@ -24,6 +24,10 @@ export default async function handler(
     return;
   }
 
+  if (!modelConfigurationReady(process.env)) {
+    return res.status(503).json({ success: false, error: '模型服务尚未配置完整，请联系维护者；本次未发送简历分析请求。' });
+  }
+
   try {
     const { resumeText, jobDesc } = req.body;
 
@@ -43,6 +47,7 @@ export default async function handler(
     }
 
     // Process the request
+    const { analyzeResumeMatch } = await import('../../utils/matchResumeToJD');
     const result = await analyzeResumeMatch(resumeText, jobDesc);
 
     if (!result.success) {

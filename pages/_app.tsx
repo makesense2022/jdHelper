@@ -25,8 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
         {/* 添加自定义meta标签，防止其他应用的资源请求 */}
         <meta name="application-name" content="resume-assistant" />
+      <meta name="robots" content="noindex, follow" />
       </Head>
-      <><Component {...pageProps} /><Script src="/portfolio-analytics.js" strategy="afterInteractive" data-site="learn" data-release="b259defe71d2" /><div style={{ padding: "8px 16px", fontSize: "12px", textAlign: "center" }}><a href="/portfolio-privacy.html">访问统计与关闭选项 / Analytics privacy</a></div></>
+      <><Component {...pageProps} /><Script src="/site-foundation-config.js" strategy="afterInteractive" /><Script src="/site-foundation.js" strategy="afterInteractive" /><Script src="/portfolio-analytics.js" strategy="afterInteractive" data-site="learn" data-release="b259defe71d2" /><div style={{ padding: "8px 16px", fontSize: "12px", textAlign: "center" }}><a href="/portfolio-privacy.html">访问统计与关闭选项 / Analytics privacy</a></div></>
     </>
   );
 }

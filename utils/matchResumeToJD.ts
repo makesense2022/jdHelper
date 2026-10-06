@@ -16,7 +16,7 @@ export type MatchResult = z.infer<typeof outputSchema>;
 const outputParser = StructuredOutputParser.fromZodSchema(outputSchema);
 
 // Create a prompt template with instructions
-const promptTemplate = PromptTemplate.fromTemplate(`
+export const promptTemplate = PromptTemplate.fromTemplate(`
 You are an expert resume analyzer. You'll compare a resume to a job description and provide detailed feedback.
 
 Resume:
@@ -30,7 +30,7 @@ Based on the resume and job description above, analyze the match between them. P
 2. A list of key skills or qualifications mentioned in the job description that are missing from the resume.
 3. Specific suggestions to improve the resume to better match this job description.
 
-${outputParser.getFormatInstructions()}
+{formatInstructions}
 `);
 
 // Create a function to use the chain with type safety
@@ -45,7 +45,8 @@ export async function analyzeResumeMatch(resumeText: string, jobDesc: string): P
     
     const prompt = await promptTemplate.format({
       resumeText,
-      jobDesc
+      jobDesc,
+      formatInstructions: outputParser.getFormatInstructions()
     });
     const response = await model.invoke(prompt);
     const content = typeof response.content === 'string'
