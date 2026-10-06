@@ -48,3 +48,16 @@ Build preparation emits an ignored public configuration from environment variabl
 Reference: [PostHog JavaScript configuration](https://posthog.com/docs/libraries/js/config).
 
 <!-- website-foundation:end -->
+
+## Vercel deployment — 2026-10-06
+
+Address: https://learn-gray-ten.vercel.app
+
+Project: `learn`; actual target: production; status: READY. All deployment URLs require Vercel login. Private input and unreviewed content remain noindex. PostHog is off for this protected deployment.
+Resume analysis remains unavailable until model configuration and API authorization are configured by the owner in Vercel. No model API credential or private document was uploaded in this deployment. Required variable names: `DEEPSEEK_API_KEY`, `DEEPSEEK_API_BASE_URL`, `DEEPSEEK_MODEL_NAME`, `LEARN_API_KEY`; preserve the existing client/server API authorization setup.
+
+Vercel variable names configured: `POSTHOG_KEY`, `POSTHOG_HOST`, `POSTHOG_MODE`, `SITE_URL`, `NEXT_PUBLIC_SITE_URL`. `GOOGLE_SITE_VERIFICATION` is still unset.
+
+Deployment method: Vercel cloud Next.js build. Git auto-deployment is not connected. Local `.vercel/` files are excluded from Git backups.
+
+Search Console ownership verification and sitemap submission remain manual. Do not submit protected/private content.
