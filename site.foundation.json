@@ -4,9 +4,9 @@
   "legacySiteId": "learn",
   "siteName": "Resume Assistant",
   "description": "帮助整理简历的本地开发工具。私人简历和上传文档不进入访问分析。",
-  "siteUrl": null,
-  "originEvidence": null,
-  "indexing": "private",
+  "siteUrl": "https://learn.zhangjunnan.chatgpt.site",
+  "originEvidence": "Existing confirmed protected Vercel production alias",
+  "indexing": "public",
   "framework": "next",
   "entries": [
     "pages/_app.tsx"

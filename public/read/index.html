@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resume Assistant · 文本阅读</title><meta name="description" content="帮助整理简历的本地开发工具。私人简历和上传文档不进入访问分析。"><meta name="robots" content="index,follow"><link rel="canonical" href="https://learn.zhangjunnan.chatgpt.site/read/"><style>body{max-width:850px;padding:24px;margin:auto;color:#242522;background:#faf9f3;font:18px/1.8 system-ui}a{color:#305f46}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}h1{font-size:28px}</style></head><body><nav><a href="/">返回网站</a> · <a href="/llms-full.txt">文本文件</a></nav><main><h1>Resume Assistant · 文本阅读</h1><p>与公开网站使用相同的内容。原页面的出处、适用边界与编辑说明仍然有效。</p><pre># Resume Assistant
+
+
+
+## 网站同源资料
+
+与公开网站使用同一份编辑数据，原有来源与内容边界继续适用。
+
+## public/tool-info.json
+
+与网站共用的数据文件：public/tool-info.json
+
+{
+  &quot;title&quot;: &quot;简历助手：公开使用说明&quot;,
+  &quot;purpose&quot;: &quot;通过网站已有的简历输入、PDF文本提取和岗位描述分析入口整理求职材料。&quot;,
+  &quot;inputModes&quot;: [
+    &quot;粘贴简历文本&quot;,
+    &quot;上传包含文字的PDF文件&quot;,
+    &quot;输入岗位描述&quot;
+  ],
+  &quot;pdfScope&quot;: &quot;从PDF提取已有文字。此上传接口不调用模型，也不生成不存在的工作经历。&quot;,
+  &quot;modelConfiguration&quot;: &quot;模型分析入口需要单独配置服务端模型提供方和生产访问限制。发布网站与配置模型服务是分别验证的步骤。&quot;,
+  &quot;privacy&quot;: &quot;这里仅公开产品说明与输入方式；用户的简历、联系方式、上传文件和分析结果不加入搜索索引。&quot;,
+  &quot;limitations&quot;: &quot;提取结果受PDF内容和字体影响。用户需要核对文本；图片扫描件可能没有可提取的文字。&quot;,
+  &quot;sourceFiles&quot;: [
+    &quot;pages/index.tsx&quot;,
+    &quot;components/FileUpload.tsx&quot;,
+    &quot;pages/api/upload-pdf.ts&quot;,
+    &quot;utils/pdfParser.ts&quot;,
+    &quot;utils/api-guard.ts&quot;
+  ]
+}</pre></main></body></html>

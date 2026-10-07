@@ -1,11 +1,17 @@
 import * as pdfjs from 'pdfjs-dist';
 
 // PDF.js 初始化函数，区分客户端和服务器端
-export function initPdfJS() {
+export async function initPdfJS() {
   if (typeof window !== 'undefined') {
     // 浏览器环境
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
   } else {
+    // Cloudflare cannot resolve a filesystem module at runtime. Bundle the
+    // official PDF.js worker implementation and expose it to the fake worker.
+    const worker = await import('pdfjs-dist/build/pdf.worker.js');
+    (globalThis as typeof globalThis & { pdfjsWorker?: unknown }).pdfjsWorker = {
+      WorkerMessageHandler: worker.WorkerMessageHandler,
+    };
     // 服务器环境 - 简单地禁用worker
     console.log('在服务器端初始化PDF.js，禁用Worker');
     // 在Node.js环境中，我们不需要完整的canvas功能，只需禁用worker
@@ -22,14 +28,14 @@ export async function extractTextFromPDF(fileBuffer: ArrayBuffer): Promise<strin
   try {
     console.log('PDF解析开始...');
     // 确保PDF.js初始化
-    initPdfJS();
+    await initPdfJS();
     
     console.log('加载PDF文档...');
     // 使用最简单的配置加载PDF - 只使用data参数
     const dataArray = new Uint8Array(fileBuffer);
     
     // 直接使用数据数组而不使用配置对象
-    const loadingTask = pdfjs.getDocument(dataArray);
+    const loadingTask = pdfjs.getDocument({ data: dataArray, disableFontFace: true, isEvalSupported: false, useSystemFonts: true });
     
     console.log('等待PDF加载完成...');
     const pdf = await loadingTask.promise;
@@ -101,4 +107,4 @@ export async function extractTextFromBase64PDF(base64Data: string): Promise<stri
     console.error('BASE64 PDF解析错误:', error);
     throw new Error('无法解析BASE64编码的PDF文件，请重试或使用其他方式');
   }
-} 
+}
