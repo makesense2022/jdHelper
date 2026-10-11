@@ -309,3 +309,7 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
   else start();
 }());
+
+/* BEGIN VERCEL NATIVE ANALYTICS 2026-10-11 */
+(function(){if(window.__VERCEL_NATIVE_CONFIG__)return;window.__VERCEL_NATIVE_CONFIG__={"siteId":"learn","sdkVersion":"2.0.1","productionOrigins":["https://learn-gray-ten.vercel.app"],"excludedPathSegments":["admin","api","internal","debug","auth","login","sign-in","sign-up","account","settings","journal","chat","health-profile","self-test","onboarding","records","notes","my-practice","saved","wishlist","checkout","payment","success","feedback","notebook","listen","review","preview","fixtures","demos","404","_not-found","_error","private"],"publicRoutePatterns":["^/$"]};var s=document.createElement("script");s.src="/vercel-native-analytics.js?v=273d9074b0af";s.defer=true;document.head.appendChild(s);}());
+/* END VERCEL NATIVE ANALYTICS */

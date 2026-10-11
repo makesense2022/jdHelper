@@ -1,0 +1,48 @@
+{
+  "siteId": "learn",
+  "sdkVersion": "2.0.1",
+  "productionOrigins": [
+    "https://learn-gray-ten.vercel.app"
+  ],
+  "excludedPathSegments": [
+    "admin",
+    "api",
+    "internal",
+    "debug",
+    "auth",
+    "login",
+    "sign-in",
+    "sign-up",
+    "account",
+    "settings",
+    "journal",
+    "chat",
+    "health-profile",
+    "self-test",
+    "onboarding",
+    "records",
+    "notes",
+    "my-practice",
+    "saved",
+    "wishlist",
+    "checkout",
+    "payment",
+    "success",
+    "feedback",
+    "notebook",
+    "listen",
+    "review",
+    "preview",
+    "fixtures",
+    "demos",
+    "404",
+    "_not-found",
+    "_error",
+    "private"
+  ],
+  "publicRoutePatterns": [
+    "^/$"
+  ],
+  "bundleSha256": "273d9074b0af1a1008766fdd17dd1b1ff74909bdcb4a0ff83396557fc4c6a604",
+  "sourceBaselineSha": "9e9b6209db882553c79cf295d21d367980afd6ee"
+}
