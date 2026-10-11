@@ -1,0 +1,10 @@
+# Resume Assistant
+
+> 帮助整理简历的本地开发工具。私人简历和上传文档不进入访问分析。
+
+## 文本阅读
+
+- [文本目录与正文](https://learn.zhangjunnan.chatgpt.site/read/)
+- [同源完整文本](https://learn.zhangjunnan.chatgpt.site/llms-full.txt)
+
+## 页面

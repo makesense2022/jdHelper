@@ -43,3 +43,14 @@ Vercel variable names configured: `POSTHOG_KEY`, `POSTHOG_HOST`, `POSTHOG_MODE`,
 Deployment method: Vercel cloud Next.js build. Git auto-deployment is not connected. Local `.vercel/` files are excluded from Git backups.
 
 Search Console ownership verification and sitemap submission remain manual. Do not submit protected/private content.
+
+## Production PostHog rollout — 2026-10-07
+
+Site ID: `learn`. Production origin: https://learn-gray-ten.vercel.app. Shared PostHog project: Website Fleet 646771 (US).
+
+Public variable names: `POSTHOG_KEY`, `POSTHOG_HOST`, `POSTHOG_MODE`, `SITE_URL`; production mode is configured, ordinary previews stay off. No secret values belong in these notes.
+
+Published on Vercel; normal Chrome page access produced a production $pageview in PostHog. Existing owner/team login protection and noindex remain.
+Only allowed page/interaction metadata is captured. No resume text, job descriptions, uploads, error messages or stacks are sent. Model analysis configuration remains separate.
+
+SDK privacy, route/pageview ownership and ingestion authentication tests pass. Actual business terminal events retain existing triggers; no purchase or completion events are fabricated. Search Console verification/indexing remain separate.

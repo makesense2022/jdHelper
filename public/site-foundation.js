@@ -101,6 +101,10 @@
     if (event.event !== '$pageview' && event.event !== '$exception' && !standard.has(event.event) && !originals.has(event.event)) return null;
     var old = event.properties || {}, clean = sanitize(old);
     ['distinct_id', '$device_id', '$session_id', '$window_id', '$insert_id', '$lib', '$lib_version', '$time'].forEach(function (key) { if (old[key] != null) clean[key] = old[key]; });
+    // The SDK's public ingestion token is required for transport authentication.
+    // Always use the validated configuration, never a caller-supplied token.
+    clean.token = config.posthogKey;
+    clean.$process_person_profile = false;
     var path = typeof old.path === 'string' && publicPath(old.path) ? old.path : routePath();
     Object.assign(clean, { site_id: config.siteId, site_name: config.siteName, environment: config.mode === 'local' ? 'local' : 'production', path: path, page_title: old.page_title || config.siteName, $title: old.page_title || config.siteName, $current_url: location.origin + path, $pathname: path, $host: location.hostname, $geoip_disable: true });
     if (config.mode === 'local') clean.test_run_id = config.testRunId || 'manual-local';
@@ -134,8 +138,8 @@
       var sdk = window.posthog;
       if (!sdk || !sdk.init) { initializing = false; return; }
       // A pre-existing SDK has one owner; do not initialize it a second time.
-      if (sdk.__loaded) { client = sdk; sdk.set_config({ capture_pageview: false, autocapture: false, before_send: beforeSend }); flush(); return; }
-      sdk.init(config.posthogKey, { api_host: config.posthogHost, defaults: '2026-05-30', capture_pageview: false, capture_pageleave: false, autocapture: false, capture_exceptions: false, capture_heatmaps: false, capture_dead_clicks: false, capture_performance: false, enable_recording_console_log: false, logs: { captureConsoleLogs: false }, disable_external_dependency_loading: true, disable_session_recording: true, disable_surveys: true, disable_product_tours: true, person_profiles: 'never', persistence: 'localStorage', respect_dnt: true, ip: false, before_send: beforeSend, loaded: function (instance) { client = instance; flush(); } });
+      if (sdk.__loaded) { client = sdk; sdk.set_config({ capture_pageview: false, autocapture: false, persistence: config.anonymousSessionOnly ? 'memory' : 'localStorage', disable_persistence: config.anonymousSessionOnly === true, person_profiles: 'never', before_send: beforeSend }); flush(); return; }
+      sdk.init(config.posthogKey, { api_host: config.posthogHost, defaults: '2026-05-30', capture_pageview: false, capture_pageleave: false, autocapture: false, capture_exceptions: false, capture_heatmaps: false, capture_dead_clicks: false, capture_performance: false, enable_recording_console_log: false, logs: { captureConsoleLogs: false }, disable_external_dependency_loading: true, disable_session_recording: true, disable_surveys: true, disable_product_tours: true, person_profiles: 'never', persistence: config.anonymousSessionOnly ? 'memory' : 'localStorage', disable_persistence: config.anonymousSessionOnly === true, respect_dnt: true, ip: false, before_send: beforeSend, loaded: function (instance) { client = instance; flush(); } });
     };
     document.head.appendChild(script);
   }

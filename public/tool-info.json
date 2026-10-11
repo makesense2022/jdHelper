@@ -1,0 +1,10 @@
+{
+  "title": "简历助手：公开使用说明",
+  "purpose": "通过网站已有的简历输入、PDF文本提取和岗位描述分析入口整理求职材料。",
+  "inputModes": ["粘贴简历文本", "上传包含文字的PDF文件", "输入岗位描述"],
+  "pdfScope": "从PDF提取已有文字。此上传接口不调用模型，也不生成不存在的工作经历。",
+  "modelConfiguration": "模型分析入口需要单独配置服务端模型提供方和生产访问限制。发布网站与配置模型服务是分别验证的步骤。",
+  "privacy": "这里仅公开产品说明与输入方式；用户的简历、联系方式、上传文件和分析结果不加入搜索索引。",
+  "limitations": "提取结果受PDF内容和字体影响。用户需要核对文本；图片扫描件可能没有可提取的文字。",
+  "sourceFiles": ["pages/index.tsx", "components/FileUpload.tsx", "pages/api/upload-pdf.ts", "utils/pdfParser.ts", "utils/api-guard.ts"]
+}

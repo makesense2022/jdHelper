@@ -157,7 +157,7 @@ function writeDiscovery(root, relative, value) {
 function publicFiles(root, config, pages, destination, complete = false) {
   const prefix = destination ? destination + '/' : 'public/';
   if (complete || !nativeAsset(root, 'robots')) write(root, prefix + 'robots.txt', robotsText(config));
-  if (config.siteUrl && (complete || !nativeAsset(root, 'sitemap'))) {
+  if (config.indexing === 'public' && config.siteUrl && (complete || !nativeAsset(root, 'sitemap'))) {
     const file = path.join(root, prefix + 'sitemap.xml');
     write(root, prefix + 'sitemap.xml', complete ? mergeSitemap(existsSync(file) ? readFileSync(file, 'utf8') : '', pages, config) : sitemapXml(pages, config));
   }
@@ -214,8 +214,9 @@ export function finalize(root, config) {
       if (!publicPath(route, config) || /noindex/.test(getMeta(html, 'robots'))) continue;
       pages.push({ path: route, title: textContent(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || config.siteName), description: getMeta(html, 'description') || config.description, indexable: config.indexing === 'public' && Boolean(config.siteUrl), excerpt: textContent(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '').slice(0, 3000) });
     }
-    publicFiles(root, config, pages);
-    reports.push({ directory: '.next/server/app', htmlPages: pages.length, indexedPages: pages.filter(page => page.indexable).length, verifiedDomain: Boolean(config.siteUrl), mode: 'SSR; root metadata and page metadata own head output' });
+    const searchPages = pages.length ? pages : (config.routes || []).filter(route => !route.path.includes('[') && publicPath(route.path, config) && route.source && existsSync(path.join(root, route.source))).map(route => ({ path: route.path, title: config.siteName, description: config.description, indexable: config.indexing === 'public' && Boolean(config.siteUrl), excerpt: '' }));
+    publicFiles(root, config, searchPages);
+    reports.push({ directory: '.next/server/app', htmlPages: pages.length, indexedPages: searchPages.filter(page => page.indexable).length, verifiedDomain: Boolean(config.siteUrl), mode: 'SSR; root metadata and page metadata own head output', searchRouteSource: pages.length ? 'prerendered HTML' : 'explicit fixed routes with source files' });
     config.pageTitles = Object.fromEntries(pages.map(page => [page.path, page.title]));
     write(root, 'public/site-foundation-config.js', 'window.__SITE_FOUNDATION_CONFIG__ = ' + safeJson(config) + ';\n');
   }

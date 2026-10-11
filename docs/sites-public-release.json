@@ -1,0 +1,46 @@
+{
+  "audience": "public",
+  "url": "https://learn.zhangjunnan.chatgpt.site",
+  "deployment": {
+    "id": "appgdep_6ac55ee16b688191aae674a6d18586c0",
+    "status": "succeeded",
+    "versionId": "appgprj_6ac4c1c96e30819198a0fb40e8f04e2d~appgver_902716f858ec8191aeac330f5358a346",
+    "commit": "4d8f0d26f05ee4fed95793bd716b65b6f07e3c66"
+  },
+  "ai": "actual_public_content",
+  "build": {
+    "project": "learn",
+    "status": "built",
+    "sourcePages": 0,
+    "sourceCollections": 1,
+    "textCharacters": 687,
+    "bodyCoverage": "actual_public_content",
+    "output": "dist/client",
+    "checks": [
+      {
+        "name": "build",
+        "status": "passed",
+        "exitCode": 0,
+        "log": "/Users/zhangjunnan/Documents/Projects/.sites-public-workspaces/learn/.sites-runtime/release-logs/build.log"
+      },
+      {
+        "name": "server-adapter",
+        "status": "passed",
+        "exitCode": 0,
+        "log": "/Users/zhangjunnan/Documents/Projects/.sites-public-workspaces/learn/.sites-runtime/release-logs/server-adapter.log"
+      }
+    ],
+    "public": true,
+    "origin": "https://learn.zhangjunnan.chatgpt.site",
+    "contentHash": "2a8f18e8e446359d8253ab16cd545ad3f031a0cd68a7afa1aa90ab9c4f24e865"
+  },
+  "liveValidationFile": "/Users/zhangjunnan/Documents/Projects/site-analytics/reports/chatgpt-sites-public-2026-10-06/live-checks.json",
+  "sourceCheckout": "/Users/zhangjunnan/Documents/Projects/.sites-public-workspaces/learn",
+  "originalSource": "Preserved primary project and its original Git remote; runtime adaptations live in the linked Sites source checkout.",
+  "manualPending": [
+    "Google Search Console ownership verification",
+    "Sitemap submission and Search generative AI settings",
+    "Search crawl/index/citation results",
+    "Per-site analytics event delivery validation"
+  ]
+}
