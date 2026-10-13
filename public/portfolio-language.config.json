@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "siteId": "learn",
+  "mode": "dom",
+  "defaultLanguage": "zh",
+  "strategy": "prefix",
+  "enPrefix": "/en",
+  "zhPrefix": "",
+  "nativeCookies": [],
+  "hydrationRequired": true,
+  "showSwitcher": true,
+  "messagesPath": "/portfolio-language.messages.json",
+  "excludeSelectors": [
+    ".result-card li",
+    ".result-card .suggestions",
+    "[data-resume-content]"
+  ],
+  "canvasTranslation": false
+}

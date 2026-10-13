@@ -1,0 +1,1087 @@
+{
+  "schemaVersion": 1,
+  "siteId": "learn",
+  "generatedAt": "2026-10-12T15:06:01.088687+00:00",
+  "translationProvenance": {
+    "method": "local neural translation plus reviewed interface overrides",
+    "models": {
+      "zh-en": {
+        "model": "Helsinki-NLP/opus-mt-zh-en",
+        "revision": "cf109095479db38d6df799875e34039d4938aaa6",
+        "license": "CC-BY-4.0",
+        "source": "https://huggingface.co/Helsinki-NLP/opus-mt-zh-en"
+      },
+      "en-zh": {
+        "model": "Helsinki-NLP/opus-mt-en-zh",
+        "revision": "408d9bc410a388e1d9aef112a2daba955b945255",
+        "license": "Apache-2.0",
+        "source": "https://huggingface.co/Helsinki-NLP/opus-mt-en-zh"
+      }
+    },
+    "generation": {
+      "torch": "2.8.0",
+      "beamSize": 2,
+      "maxNewTokens": 512,
+      "device": "cpu",
+      "cache": "same-model previous MPS outputs reused where source text was unchanged"
+    },
+    "sourceTextSentToNetwork": false,
+    "reviewState": "key interface wording reviewed; full editorial review not asserted"
+  },
+  "phrases": {
+    "简历助手 - AI简历优化与匹配分析": {
+      "zh": "简历助手 - AI简历优化与匹配分析",
+      "en": "Resume Assistant · AI resume improvement and job matching"
+    },
+    "使用AI技术分析简历与岗位匹配度，提供专业优化建议": {
+      "zh": "使用AI技术分析简历与岗位匹配度，提供专业优化建议",
+      "en": "Use AI to explore how a resume matches a role and get suggestions for improvement."
+    },
+    "访问统计与关闭选项 / Analytics privacy": {
+      "zh": "访问统计与关闭选项 / Analytics privacy",
+      "en": "Analytics privacy & choices"
+    },
+    "Method not allowed": {
+      "zh": "不允许使用方法",
+      "en": "Method not allowed"
+    },
+    "模型服务尚未配置完整，请联系维护者；本次未发送简历分析请求。": {
+      "zh": "模型服务尚未配置完整，请联系维护者；本次未发送简历分析请求。",
+      "en": "The model service is not yet fully configured. Contact the maintainer; the request for curriculum vitae analysis was not sent this time."
+    },
+    "Both resumeText and jobDesc are required": {
+      "zh": "需要同时恢复文本和工作Desc",
+      "en": "Both resumeText and jobDesc are required"
+    },
+    "Both resumeText and jobDesc must be strings": {
+      "zh": "恢复文本和工作 DEsc 必须是字符串",
+      "en": "Both resumeText and jobDesc must be strings"
+    },
+    "Failed to analyze resume": {
+      "zh": "分析恢复报告失败",
+      "en": "Failed to analyze resume"
+    },
+    "Error processing resume analysis request:": {
+      "zh": "处理错误恢复分析请求:",
+      "en": "Error processing resume analysis request:"
+    },
+    "Unknown error occurred": {
+      "zh": "发生未知错误",
+      "en": "Unknown error occurred"
+    },
+    "PDF加载成功，共": {
+      "zh": "PDF加载成功，共",
+      "en": "PDF loaded successfully, total"
+    },
+    "页": {
+      "zh": "页",
+      "en": "Page"
+    },
+    "正在处理第": {
+      "zh": "正在处理第",
+      "en": "Dealing with the first"
+    },
+    "页...": {
+      "zh": "页...",
+      "en": "Page..."
+    },
+    "第": {
+      "zh": "第",
+      "en": "Rule"
+    },
+    "页包含图片:": {
+      "zh": "页包含图片:",
+      "en": "The page contains pictures:"
+    },
+    "警告: 第": {
+      "zh": "警告: 第",
+      "en": "Warning:"
+    },
+    "页没有可提取的文本": {
+      "zh": "页没有可提取的文本",
+      "en": "No extractable text on the page"
+    },
+    "诊断结果：这很可能是扫描件PDF，需要使用OCR技术提取文本": {
+      "zh": "诊断结果：这很可能是扫描件PDF，需要使用OCR技术提取文本",
+      "en": "Diagnosis: This is probably a scanned PDF, requiring the use of OCR technology to extract the text"
+    },
+    "[PDF诊断：这似乎是扫描件PDF，建议使用OCR工具识别文本。您可以尝试在线OCR服务如ABBYY FineReader、Google Cloud Vision或Tesseract.js]": {
+      "zh": "[PDF诊断：这似乎是扫描件PDF，建议使用OCR工具识别文本。您可以尝试在线OCR服务如ABBYY FineReader、Google Cloud Vision或Tesseract.js]",
+      "en": "[PDF Diagnosis: This appears to be a scanned PDF, which suggests using the OCR tool to identify text. You can try online OCR services such as ABBYY FineReader, Google Cloud Vision or Tesseract.js]"
+    },
+    "PDF解析错误:": {
+      "zh": "PDF解析错误:",
+      "en": "PDF parsing error:"
+    },
+    "PDF解析失败:": {
+      "zh": "PDF解析失败:",
+      "en": "PDF parsing failed:"
+    },
+    "未知错误": {
+      "zh": "未知错误",
+      "en": "Unknown error"
+    },
+    "只支持POST请求": {
+      "zh": "只支持POST请求",
+      "en": "Support only POST requests"
+    },
+    "开始处理PDF提取请求...": {
+      "zh": "开始处理PDF提取请求...",
+      "en": "Start processing PDF extraction requests..."
+    },
+    "请求中未找到文件": {
+      "zh": "请求中未找到文件",
+      "en": "No files found in the request"
+    },
+    "未找到上传的文件": {
+      "zh": "未找到上传的文件",
+      "en": "No upload found"
+    },
+    "文件已接收:": {
+      "zh": "文件已接收:",
+      "en": "Document received:"
+    },
+    "字节,": {
+      "zh": "字节,",
+      "en": "bytes,"
+    },
+    "文件类型不支持:": {
+      "zh": "文件类型不支持:",
+      "en": "File type not supported:"
+    },
+    "请上传PDF文件": {
+      "zh": "请上传PDF文件",
+      "en": "Please upload PDF files"
+    },
+    "正在读取文件:": {
+      "zh": "正在读取文件:",
+      "en": "Reading files:"
+    },
+    "文件已读取，大小:": {
+      "zh": "文件已读取，大小:",
+      "en": "File read, size:"
+    },
+    "字节": {
+      "zh": "字节",
+      "en": "Bytes"
+    },
+    "开始使用PDFJS解析PDF文件...": {
+      "zh": "开始使用PDFJS解析PDF文件...",
+      "en": "Starting parse PDF files using PDFJS..."
+    },
+    "PDF解析完成，提取的文本长度:": {
+      "zh": "PDF解析完成，提取的文本长度:",
+      "en": "PDF parsing completed. Text length extracted:"
+    },
+    "字符": {
+      "zh": "字符",
+      "en": "Character"
+    },
+    "临时文件已删除": {
+      "zh": "临时文件已删除",
+      "en": "Temporary file deleted"
+    },
+    "文件处理错误:": {
+      "zh": "文件处理错误:",
+      "en": "File processing error:"
+    },
+    "错误处理中: 临时文件已删除": {
+      "zh": "错误处理中: 临时文件已删除",
+      "en": "Error processing: temporary file deleted"
+    },
+    "PDF处理错误:": {
+      "zh": "PDF处理错误:",
+      "en": "PDF processing error:"
+    },
+    "错误处理: 临时文件已清理": {
+      "zh": "错误处理: 临时文件已清理",
+      "en": "Error processing: temporary file cleared"
+    },
+    "清理临时文件时发生错误:": {
+      "zh": "清理临时文件时发生错误:",
+      "en": "Error cleaning up temporary files:"
+    },
+    "处理PDF文件时出错": {
+      "zh": "处理PDF文件时出错",
+      "en": "Error while processing PDF files"
+    },
+    "向客户端返回错误:": {
+      "zh": "向客户端返回错误:",
+      "en": "Could not close temporary folder: %s"
+    },
+    "开始处理PDF上传请求": {
+      "zh": "开始处理PDF上传请求",
+      "en": "Start processing PDF upload requests"
+    },
+    "开始提取PDF文本": {
+      "zh": "开始提取PDF文本",
+      "en": "Start extracting PDF text"
+    },
+    "PDF文本提取完成，长度:": {
+      "zh": "PDF文本提取完成，长度:",
+      "en": "PDF text extraction completed, length:"
+    },
+    "PDF上传处理错误:": {
+      "zh": "PDF上传处理错误:",
+      "en": "PDF upload processing error:"
+    },
+    "请同时填写简历内容和岗位描述": {
+      "zh": "请同时填写简历内容和岗位描述",
+      "en": "Please also fill in the resume and job description."
+    },
+    "分析请求失败": {
+      "zh": "分析请求失败",
+      "en": "Failed to analyse request"
+    },
+    "返回数据格式不正确": {
+      "zh": "返回数据格式不正确",
+      "en": "Returning data format is incorrect"
+    },
+    "发生未知错误": {
+      "zh": "发生未知错误",
+      "en": "Unknown error"
+    },
+    "简历助手 - 智能简历匹配分析": {
+      "zh": "简历助手 - 智能简历匹配分析",
+      "en": "Résumé Assistant · Analyze your fit for a role"
+    },
+    "使用AI分析简历与岗位匹配度，获取专业优化建议": {
+      "zh": "使用AI分析简历与岗位匹配度，获取专业优化建议",
+      "en": "Analysis of résumé matching of posts using AI to obtain recommendations for professional excellence"
+    },
+    "简历助手": {
+      "zh": "简历助手",
+      "en": "Résumé Assistant"
+    },
+    "AI驱动的简历分析与优化工具": {
+      "zh": "AI驱动的简历分析与优化工具",
+      "en": "AI-driven curriculum vitae analysis and optimization tool"
+    },
+    "分析简历与岗位匹配度": {
+      "zh": "分析简历与岗位匹配度",
+      "en": "Analyze how your résumé matches the role"
+    },
+    "简历内容": {
+      "zh": "简历内容",
+      "en": "Curricula vitae"
+    },
+    "请粘贴您的简历内容...": {
+      "zh": "请粘贴您的简历内容...",
+      "en": "Please paste your resume..."
+    },
+    "岗位描述": {
+      "zh": "岗位描述",
+      "en": "Job description"
+    },
+    "请粘贴岗位描述...": {
+      "zh": "请粘贴岗位描述...",
+      "en": "Please paste job description..."
+    },
+    "重置": {
+      "zh": "重置",
+      "en": "Reset"
+    },
+    "分析中...": {
+      "zh": "分析中...",
+      "en": "Analysis..."
+    },
+    "开始分析": {
+      "zh": "开始分析",
+      "en": "Start analysis."
+    },
+    "重新分析": {
+      "zh": "重新分析",
+      "en": "Reanalyse"
+    },
+    "关于简历助手": {
+      "zh": "关于简历助手",
+      "en": "About Résumé Assistant"
+    },
+    "简历助手利用先进的人工智能技术，分析您的简历与目标岗位的匹配程度。 系统会评估简历中的技能、经验与岗位要求的匹配度，识别缺失的关键技能， 并提供针对性的优化建议，帮助您提高面试成功率。": {
+      "zh": "简历助手利用先进的人工智能技术，分析您的简历与目标岗位的匹配程度。 系统会评估简历中的技能、经验与岗位要求的匹配度，识别缺失的关键技能， 并提供针对性的优化建议，帮助您提高面试成功率。",
+      "en": "The CV assistant uses advanced artificial intelligence techniques to analyse your CV match with the target position. The system assesses the skill, experience and job matching in the CV, identifies the missing key skills, and provides targeted and optimal advice to help you improve the success rate of the interview."
+    },
+    "使用方法：": {
+      "zh": "使用方法：",
+      "en": "Method of use:"
+    },
+    "在文本框中": {
+      "zh": "在文本框中",
+      "en": "In Text Box"
+    },
+    "粘贴": {
+      "zh": "粘贴",
+      "en": "Paste"
+    },
+    "您的简历内容和岗位描述": {
+      "zh": "您的简历内容和岗位描述",
+      "en": "Your curriculum vitae and job description"
+    },
+    "或者": {
+      "zh": "或者",
+      "en": "Or..."
+    },
+    "上传PDF文件": {
+      "zh": "上传PDF文件",
+      "en": "Upload PDF files"
+    },
+    "，系统会自动提取文本": {
+      "zh": "，系统会自动提取文本",
+      "en": ", the system automatically extracts text"
+    },
+    "点击\"开始分析\"获取匹配度评分和优化建议": {
+      "zh": "点击\"开始分析\"获取匹配度评分和优化建议",
+      "en": "Click \"Start analysis\" to get a match rating and optimize the recommendations."
+    },
+    "简历助手 - 基于 Next.js, LangChain 和 DeepSeek AI": {
+      "zh": "简历助手 - 基于 Next.js, LangChain 和 DeepSeek AI",
+      "en": "Curricula vitae assistant - based on Next.js, Lang Chain and DeepSeek AI"
+    },
+    "文件大小不能超过10MB": {
+      "zh": "文件大小不能超过10MB",
+      "en": "File size cannot exceed 10MB"
+    },
+    "正在上传文件到DeepSeek...": {
+      "zh": "正在上传文件到DeepSeek...",
+      "en": "Uploading files to DeepSeek..."
+    },
+    "等待DeepSeek处理...": {
+      "zh": "等待DeepSeek处理...",
+      "en": "Waiting for DeepSeek to process..."
+    },
+    "服务器返回数据:": {
+      "zh": "服务器返回数据:",
+      "en": "Server returns data:"
+    },
+    "服务器错误:": {
+      "zh": "服务器错误:",
+      "en": "Server error:"
+    },
+    "上传失败": {
+      "zh": "上传失败",
+      "en": "Upload Failed"
+    },
+    "返回数据无效:": {
+      "zh": "返回数据无效:",
+      "en": "Returns invalid data:"
+    },
+    "无法解析文件内容": {
+      "zh": "无法解析文件内容",
+      "en": "Could not close temporary folder: %s"
+    },
+    "文件上传错误:": {
+      "zh": "文件上传错误:",
+      "en": "File upload error:"
+    },
+    "文件处理失败，请重试": {
+      "zh": "文件处理失败，请重试",
+      "en": "File processing failed, please try again"
+    },
+    "准备文件...": {
+      "zh": "准备文件...",
+      "en": "Prepare files..."
+    },
+    "上传中...": {
+      "zh": "上传中...",
+      "en": "Uploading..."
+    },
+    "AI分析中...": {
+      "zh": "AI分析中...",
+      "en": "AI analysis..."
+    },
+    "处理完成": {
+      "zh": "处理完成",
+      "en": "Process completed"
+    },
+    "M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z": {
+      "zh": "M9 13h6m-3-3-3v6m5 5H7a2 2 0 0-2-2V5a2 012-2h5.586a1 1 0 0.707.7793l5.414 5.414 5.414a1 1 0 01293.707V19a2 2 001-2 2z",
+      "en": "M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+    },
+    "拖放文件至此上传": {
+      "zh": "拖放文件至此上传",
+      "en": "Drag and drop file to upload here"
+    },
+    "点击": {
+      "zh": "点击",
+      "en": "Click"
+    },
+    "（PDF格式）或拖拽至此": {
+      "zh": "（PDF格式）或拖拽至此",
+      "en": "(PDF format) or drag to this"
+    },
+    "上传简历": {
+      "zh": "上传简历",
+      "en": "Upload curriculum vitae"
+    },
+    "上传职位描述": {
+      "zh": "上传职位描述",
+      "en": "Upload job description"
+    },
+    "仅支持PDF文件 (最大10MB)": {
+      "zh": "仅支持PDF文件 (最大10MB)",
+      "en": "Only PDF files (max. 10MB) are supported"
+    },
+    "M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z": {
+      "zh": "M18 10a8 8 0 11-16 0 8 8 0 0 0 0 0 0116 0zm-7 4a1 1 0 11-2 0 1 0 012 0zm-1-9a1 1 00-1 1 01 00-1 1 v4a1 1 0 102 0V6a1 1 0 00-1-1z",
+      "en": "M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+    },
+    "简历匹配分析结果": {
+      "zh": "简历匹配分析结果",
+      "en": "Resume matching analysis"
+    },
+    "匹配度评分": {
+      "zh": "匹配度评分",
+      "en": "Match score"
+    },
+    "您的简历非常符合此岗位要求！": {
+      "zh": "您的简历非常符合此岗位要求！",
+      "en": "Your curriculum vitae is very suitable for this job!"
+    },
+    "您的简历基本符合要求，但有改进空间。": {
+      "zh": "您的简历基本符合要求，但有改进空间。",
+      "en": "Your curriculum vitae is basically satisfactory, but there is room for improvement."
+    },
+    "您的简历与岗位匹配度较低，建议按照建议优化。": {
+      "zh": "您的简历与岗位匹配度较低，建议按照建议优化。",
+      "en": "Your curriculum vitae matches the job with a low degree and is recommended to be optimized as recommended."
+    },
+    "缺失技能": {
+      "zh": "缺失技能",
+      "en": "Skills to develop"
+    },
+    "没有发现明显缺失的技能！": {
+      "zh": "没有发现明显缺失的技能！",
+      "en": "There's no apparent missing skills!"
+    },
+    "优化建议": {
+      "zh": "优化建议",
+      "en": "Suggestions for improvement"
+    },
+    "Resume Assistant": {
+      "zh": "继续助理助理",
+      "en": "Resume Assistant"
+    },
+    "改进建议": {
+      "zh": "改进建议",
+      "en": "Suggestions"
+    },
+    "使用问题": {
+      "zh": "使用问题",
+      "en": "Problems"
+    },
+    "其他联系": {
+      "zh": "其他联系",
+      "en": "Other contact"
+    },
+    "项目：": {
+      "zh": "项目：",
+      "en": "Projects:"
+    },
+    "项目标识：": {
+      "zh": "项目标识：",
+      "en": "Project identification:"
+    },
+    "类型：": {
+      "zh": "类型：",
+      "en": "Type:"
+    },
+    "公开页面：": {
+      "zh": "公开页面：",
+      "en": "Open page:"
+    },
+    "请先写下你遇到的问题或建议。": {
+      "zh": "请先写下你遇到的问题或建议。",
+      "en": "First describe the problem or suggestion."
+    },
+    "已复制。": {
+      "zh": "已复制。",
+      "en": "Copyed."
+    },
+    "浏览器暂时无法复制，请选中下面的文字后手动复制。": {
+      "zh": "浏览器暂时无法复制，请选中下面的文字后手动复制。",
+      "en": "Your browser could not copy the text. Select it below and copy it manually."
+    },
+    "附上当前公开页面链接": {
+      "zh": "附上当前公开页面链接",
+      "en": "Include the current public page link"
+    },
+    "] 联系作者": {
+      "zh": "] 联系作者",
+      "en": "Contact author"
+    },
+    "联系 / 建议": {
+      "zh": "联系 / 建议",
+      "en": "Contact / feedback"
+    },
+    "一起把这里变得更好": {
+      "zh": "一起把这里变得更好",
+      "en": "Help make this better"
+    },
+    "你的想法，我想听听": {
+      "zh": "你的想法，我想听听",
+      "en": "I would like to hear your thoughts"
+    },
+    "关闭反馈窗口": {
+      "zh": "关闭反馈窗口",
+      "en": "Close feedback"
+    },
+    "发现问题、有个建议，或只是想联系我，都可以在这里说。": {
+      "zh": "发现问题、有个建议，或只是想联系我，都可以在这里说。",
+      "en": "Found a problem, have a suggestion, or just want to get in touch? Tell me here."
+    },
+    "你想聊什么": {
+      "zh": "你想聊什么",
+      "en": "What would you like to discuss?"
+    },
+    "写下你的想法": {
+      "zh": "写下你的想法",
+      "en": "Share your thoughts"
+    },
+    "例如：我在手机上打开这一页时，按钮被挡住了……": {
+      "zh": "例如：我在手机上打开这一页时，按钮被挡住了……",
+      "en": "For example: On my phone, a button on this page was hidden behind another element…"
+    },
+    "打开 Gmail 草稿": {
+      "zh": "打开 Gmail 草稿",
+      "en": "Open a Gmail draft"
+    },
+    "用其他邮箱": {
+      "zh": "用其他邮箱",
+      "en": "Use another email app"
+    },
+    "复制内容": {
+      "zh": "复制内容",
+      "en": "Copy the message"
+    },
+    "在邮箱里确认发送后，我才能收到这封邮件。": {
+      "zh": "在邮箱里确认发送后，我才能收到这封邮件。",
+      "en": "I will receive your email only after you confirm sending it in your email app."
+    },
+    "可手动复制的内容": {
+      "zh": "可手动复制的内容",
+      "en": "Text you can copy manually"
+    },
+    "也可以直接写信": {
+      "zh": "也可以直接写信",
+      "en": "You can also email me directly"
+    },
+    "点击复制邮箱": {
+      "zh": "点击复制邮箱",
+      "en": "Click to copy the email address"
+    },
+    "只反馈网站的使用问题，请勿填写健康记录、财务数据或其他私人信息。内容临时留在本页；打开草稿时才交给所选邮箱服务。": {
+      "zh": "只反馈网站的使用问题，请勿填写健康记录、财务数据或其他私人信息。内容临时留在本页；打开草稿时才交给所选邮箱服务。",
+      "en": "Please report only website issues. Do not include health records, financial data, or other private information. Your message stays temporarily on this page and is passed to your chosen email service only when you open a draft."
+    },
+    "内容临时留在本页，不进入访问统计。打开草稿时才交给所选邮箱服务；请勿填写敏感个人信息。": {
+      "zh": "内容临时留在本页，不进入访问统计。打开草稿时才交给所选邮箱服务；请勿填写敏感个人信息。",
+      "en": "Your message stays temporarily on this page and is excluded from usage analytics. It is passed to your chosen email service only when you open a draft. Do not include sensitive personal information."
+    },
+    "请在打开的 Gmail 草稿里检查内容并确认发送。": {
+      "zh": "请在打开的 Gmail 草稿里检查内容并确认发送。",
+      "en": "Review the Gmail draft and confirm sending it there."
+    },
+    "请在打开的邮件应用里检查内容并确认发送。": {
+      "zh": "请在打开的邮件应用里检查内容并确认发送。",
+      "en": "Review the message in your email app and confirm sending it there."
+    },
+    "反馈内容": {
+      "zh": "反馈内容",
+      "en": "Feedback"
+    },
+    "邮箱地址": {
+      "zh": "邮箱地址",
+      "en": "Email address"
+    },
+    "点击上传简历（PDF格式）或拖拽至此": {
+      "zh": "点击上传简历（PDF格式）或拖拽至此",
+      "en": "Click to upload your résumé (PDF), or drag it here"
+    },
+    "点击上传职位描述（PDF格式）或拖拽至此": {
+      "zh": "点击上传职位描述（PDF格式）或拖拽至此",
+      "en": "Click to upload the job description (PDF), or drag it here"
+    },
+    "跳到主要内容": {
+      "zh": "跳到主要内容",
+      "en": "Skip to main content"
+    },
+    "跳到正文": {
+      "zh": "跳到正文",
+      "en": "Skip to content"
+    },
+    "跳至正文": {
+      "zh": "跳至正文",
+      "en": "Skip to content"
+    },
+    "主导航": {
+      "zh": "主导航",
+      "en": "Main navigation"
+    },
+    "页脚导航": {
+      "zh": "页脚导航",
+      "en": "Footer navigation"
+    },
+    "搜索": {
+      "zh": "搜索",
+      "en": "Search"
+    },
+    "项目与作者": {
+      "zh": "项目与作者",
+      "en": "Project & creator"
+    },
+    "项目与作者 / Project & creator": {
+      "zh": "项目与作者 / Project & creator",
+      "en": "Project & creator"
+    },
+    "访问统计与隐私": {
+      "zh": "访问统计与隐私",
+      "en": "Analytics & privacy"
+    },
+    "来源": {
+      "zh": "来源",
+      "en": "Sources"
+    },
+    "关于": {
+      "zh": "关于",
+      "en": "About"
+    },
+    "回到上方 ↑": {
+      "zh": "回到上方 ↑",
+      "en": "Back to top ↑"
+    },
+    "本地收藏": {
+      "zh": "本地收藏",
+      "en": "Saved on this browser"
+    },
+    "返回首页": {
+      "zh": "返回首页",
+      "en": "Back to home"
+    },
+    "回到首页": {
+      "zh": "回到首页",
+      "en": "Return to home"
+    },
+    "打开导航": {
+      "zh": "打开导航",
+      "en": "Open navigation"
+    },
+    "关闭导航": {
+      "zh": "关闭导航",
+      "en": "Close navigation"
+    },
+    "主要导航": {
+      "zh": "主要导航",
+      "en": "Main navigation"
+    },
+    "移动端导航": {
+      "zh": "移动端导航",
+      "en": "Mobile navigation"
+    },
+    "清空搜索": {
+      "zh": "清空搜索",
+      "en": "Clear search"
+    },
+    "全部": {
+      "zh": "全部",
+      "en": "All"
+    },
+    "重新加载": {
+      "zh": "重新加载",
+      "en": "Reload"
+    },
+    "重试": {
+      "zh": "重试",
+      "en": "Try again"
+    },
+    "重置筛选": {
+      "zh": "重置筛选",
+      "en": "Reset filters"
+    },
+    "查看全部": {
+      "zh": "查看全部",
+      "en": "View all"
+    },
+    "复制链接": {
+      "zh": "复制链接",
+      "en": "Copy link"
+    },
+    "隐私说明": {
+      "zh": "隐私说明",
+      "en": "Privacy notice"
+    },
+    "隐私与数据": {
+      "zh": "隐私与数据",
+      "en": "Privacy and data"
+    },
+    "访问统计与关闭选项": {
+      "zh": "访问统计与关闭选项",
+      "en": "Analytics and opt-out options"
+    },
+    "继续阅读": {
+      "zh": "继续阅读",
+      "en": "Keep reading"
+    },
+    "元": {
+      "zh": "元",
+      "en": "yuan"
+    },
+    "秒": {
+      "zh": "秒",
+      "en": "seconds"
+    },
+    "中国": {
+      "zh": "中国",
+      "en": "China"
+    },
+    "美国": {
+      "zh": "美国",
+      "en": "United States"
+    },
+    "日本": {
+      "zh": "日本",
+      "en": "Japan"
+    },
+    "英国": {
+      "zh": "英国",
+      "en": "United Kingdom"
+    },
+    "法国": {
+      "zh": "法国",
+      "en": "France"
+    },
+    "德国": {
+      "zh": "德国",
+      "en": "Germany"
+    },
+    "意大利": {
+      "zh": "意大利",
+      "en": "Italy"
+    },
+    "瑞士": {
+      "zh": "瑞士",
+      "en": "Switzerland"
+    },
+    "中国大陆": {
+      "zh": "中国大陆",
+      "en": "Mainland China"
+    },
+    "确认": {
+      "zh": "确认",
+      "en": "Confirm"
+    },
+    "万": {
+      "zh": "万",
+      "en": "×10,000"
+    },
+    "亿": {
+      "zh": "亿",
+      "en": "×100,000,000"
+    },
+    "反馈内容已复制。": {
+      "zh": "反馈内容已复制。",
+      "en": "Feedback message copied."
+    },
+    "邮箱地址已复制。": {
+      "zh": "邮箱地址已复制。",
+      "en": "Email address copied."
+    },
+    "万人": {
+      "zh": "万人",
+      "en": "×10,000 people"
+    },
+    "亿人": {
+      "zh": "亿人",
+      "en": "×100,000,000 people"
+    },
+    "万元": {
+      "zh": "万元",
+      "en": "×10,000 yuan"
+    },
+    "亿元": {
+      "zh": "亿元",
+      "en": "×100,000,000 yuan"
+    },
+    "万人次": {
+      "zh": "万人次",
+      "en": "×10,000 visits"
+    },
+    "万次": {
+      "zh": "万次",
+      "en": "×10,000 times"
+    },
+    "亿次": {
+      "zh": "亿次",
+      "en": "×100,000,000 times"
+    },
+    "万吨": {
+      "zh": "万吨",
+      "en": "×10,000 tonnes"
+    },
+    "亿吨": {
+      "zh": "亿吨",
+      "en": "×100,000,000 tonnes"
+    },
+    "万美元": {
+      "zh": "万美元",
+      "en": "×10,000 USD"
+    },
+    "亿美元": {
+      "zh": "亿美元",
+      "en": "×100,000,000 USD"
+    },
+    "万年": {
+      "zh": "万年",
+      "en": "×10,000 years"
+    },
+    "亿年": {
+      "zh": "亿年",
+      "en": "×100,000,000 years"
+    },
+    "中文": {
+      "zh": "中文",
+      "en": "Chinese"
+    },
+    "网站语言": {
+      "zh": "网站语言",
+      "en": "Website language"
+    },
+    "返回": {
+      "zh": "返回",
+      "en": "Back"
+    },
+    "关闭": {
+      "zh": "关闭",
+      "en": "Close"
+    },
+    "取消": {
+      "zh": "取消",
+      "en": "Cancel"
+    },
+    "保存": {
+      "zh": "保存",
+      "en": "Save"
+    },
+    "删除": {
+      "zh": "删除",
+      "en": "Delete"
+    },
+    "查看更多": {
+      "zh": "查看更多",
+      "en": "Show more"
+    },
+    "了解更多": {
+      "zh": "了解更多",
+      "en": "Learn more"
+    },
+    "下一步": {
+      "zh": "下一步",
+      "en": "Next"
+    },
+    "上一步": {
+      "zh": "上一步",
+      "en": "Previous"
+    },
+    "暂停": {
+      "zh": "暂停",
+      "en": "Pause"
+    },
+    "继续": {
+      "zh": "继续",
+      "en": "Continue"
+    },
+    "重新开始": {
+      "zh": "重新开始",
+      "en": "Start again"
+    },
+    "加载中": {
+      "zh": "加载中",
+      "en": "Loading"
+    },
+    "加载中…": {
+      "zh": "加载中…",
+      "en": "Loading…"
+    },
+    "暂无结果": {
+      "zh": "暂无结果",
+      "en": "No results"
+    },
+    "来源与说明": {
+      "zh": "来源与说明",
+      "en": "Sources & notes"
+    },
+    "时间来信馆": {
+      "zh": "时间来信馆",
+      "en": "Letters across time"
+    },
+    "免责声明": {
+      "zh": "免责声明",
+      "en": "Disclaimer"
+    }
+  },
+  "numericTemplates": [
+    {
+      "parts": [
+        "PDF加载成功，共 ",
+        " 页"
+      ],
+      "zh": "PDF加载成功，共 {0} 页",
+      "en": "PDF loaded successfully, total {0} Page"
+    },
+    {
+      "parts": [
+        "正在处理第 ",
+        "/",
+        " 页..."
+      ],
+      "zh": "正在处理第 {0}/{1} 页...",
+      "en": "Dealing with the first {0}/{1} Page..."
+    },
+    {
+      "parts": [
+        "第 ",
+        " 页包含图片: ",
+        ""
+      ],
+      "zh": "第 {0} 页包含图片: {1}",
+      "en": "Rule {0} The page contains pictures: {1}"
+    },
+    {
+      "parts": [
+        "警告: 第 ",
+        " 页没有可提取的文本"
+      ],
+      "zh": "警告: 第 {0} 页没有可提取的文本",
+      "en": "Warning: {0} No extractable text on the page"
+    },
+    {
+      "parts": [
+        "",
+        " [PDF诊断：这似乎是扫描件PDF，建议使用OCR工具识别文本。您可以尝试在线OCR服务如ABBYY FineReader、Google Cloud Vision或Tesseract.js]"
+      ],
+      "zh": "{0} [PDF诊断：这似乎是扫描件PDF，建议使用OCR工具识别文本。您可以尝试在线OCR服务如ABBYY FineReader、Google Cloud Vision或Tesseract.js]",
+      "en": "{0} [PDF Diagnosis: This appears to be a scanned PDF, which suggests using the OCR tool to identify text. You can try online OCR services such as ABBYY FineReader, Google Cloud Vision or Tesseract.js]"
+    },
+    {
+      "parts": [
+        "PDF解析失败: ",
+        ""
+      ],
+      "zh": "PDF解析失败: {0}",
+      "en": "PDF parsing failed: {0}"
+    },
+    {
+      "parts": [
+        "文件已接收: ",
+        " (",
+        " 字节, ",
+        ")"
+      ],
+      "zh": "文件已接收: {0}  ({1} 字节, {2})",
+      "en": "Document received: {0}  ({1} bytes, {2})"
+    },
+    {
+      "parts": [
+        "文件类型不支持: ",
+        ""
+      ],
+      "zh": "文件类型不支持: {0}",
+      "en": "File type not supported: {0}"
+    },
+    {
+      "parts": [
+        "正在读取文件: ",
+        ""
+      ],
+      "zh": "正在读取文件: {0}",
+      "en": "Reading files: {0}"
+    },
+    {
+      "parts": [
+        "文件已读取，大小: ",
+        " 字节"
+      ],
+      "zh": "文件已读取，大小: {0} 字节",
+      "en": "File read, size: {0} Bytes"
+    },
+    {
+      "parts": [
+        "PDF解析完成，提取的文本长度: ",
+        " 字符"
+      ],
+      "zh": "PDF解析完成，提取的文本长度: {0} 字符",
+      "en": "PDF parsing completed. Text length extracted: {0} Character"
+    },
+    {
+      "parts": [
+        "向客户端返回错误: ",
+        ""
+      ],
+      "zh": "向客户端返回错误: {0}",
+      "en": "Could not close temporary folder: %s {0}"
+    },
+    {
+      "parts": [
+        "PDF文本提取完成，长度: ",
+        " 字符"
+      ],
+      "zh": "PDF文本提取完成，长度: {0} 字符",
+      "en": "PDF text extraction completed, length: {0} Character"
+    },
+    {
+      "parts": [
+        "点击",
+        "（PDF格式）或拖拽至此"
+      ],
+      "zh": "点击{0}（PDF格式）或拖拽至此",
+      "en": "Click {0}(PDF format) or drag to this"
+    },
+    {
+      "parts": [
+        "项目：",
+        ""
+      ],
+      "zh": "项目：{0}",
+      "en": "Projects:{0}"
+    },
+    {
+      "parts": [
+        "项目标识：",
+        ""
+      ],
+      "zh": "项目标识：{0}",
+      "en": "Project identification:{0}"
+    },
+    {
+      "parts": [
+        "类型：",
+        ""
+      ],
+      "zh": "类型：{0}",
+      "en": "Type:{0}"
+    },
+    {
+      "parts": [
+        "公开页面：",
+        ""
+      ],
+      "zh": "公开页面：{0}",
+      "en": "Open page:{0}"
+    },
+    {
+      "parts": [
+        "",
+        "已复制。"
+      ],
+      "zh": "{0}已复制。",
+      "en": "{0} Copyed."
+    },
+    {
+      "parts": [
+        "[",
+        "] 联系作者"
+      ],
+      "zh": "[{0}] 联系作者",
+      "en": "[{0} Contact author"
+    }
+  ]
+}

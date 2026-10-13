@@ -1,3 +1,4 @@
+import { prepareFeedback, finalizeFeedback } from './site-feedback.mjs'; // site-feedback:build-hook
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, copyFileSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
@@ -173,6 +174,7 @@ function publicFiles(root, config, pages, destination, complete = false) {
   write(root, prefix + 'site-content-index.json', JSON.stringify({ siteName: config.siteName, siteUrl: config.siteUrl, pages: items.map(({ path: route, title, description }) => ({ path: route, title, description })) }, null, 2) + '\n');
 }
 export function prepare(root, inputEnv = process.env, modeOverride) {
+  prepareFeedback(root);
   const source = JSON.parse(readFileSync(path.join(root, 'site.foundation.json'), 'utf8'));
   const config = resolveConfig(source, loadEnvironment(root, inputEnv, modeOverride), modeOverride);
   write(root, 'public/site-foundation-config.js', 'window.__SITE_FOUNDATION_CONFIG__ = ' + safeJson(config) + ';\n');
@@ -222,6 +224,7 @@ export function finalize(root, config) {
   }
   const report = { siteId: config.siteId, siteUrl: config.siteUrl, posthogConfigured: Boolean(config.posthogKey && config.posthogHost), productionEnabled: config.mode === 'production' && Boolean(config.siteUrl && config.posthogKey && config.posthogHost), indexing: config.indexing, outputs: reports, deploymentPerformed: false };
   write(root, 'docs/foundation-validation.json', JSON.stringify(report, null, 2) + '\n');
+  finalizeFeedback(root);
   return report;
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

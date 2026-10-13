@@ -1,3 +1,4 @@
+import PortfolioLanguage from '../components/portfolio-language';
 import Script from "next/script";
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <PortfolioLanguage />
       <Head>
         <title>简历助手 - AI简历优化与匹配分析</title>
         <meta name="description" content="使用AI技术分析简历与岗位匹配度，提供专业优化建议" />
@@ -27,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="application-name" content="resume-assistant" />
       <meta name="robots" content="noindex, follow" />
       </Head>
+      <Script src="/site-feedback.js" strategy="afterInteractive" />
       <><Component {...pageProps} /><Script src="/site-foundation-config.js" strategy="afterInteractive" /><Script src="/site-foundation.js" strategy="afterInteractive" /><Script src="/portfolio-analytics.js" strategy="afterInteractive" data-site="learn" data-release="b259defe71d2" /><div style={{ padding: "8px 16px", fontSize: "12px", textAlign: "center" }}><a href="/portfolio-privacy.html">访问统计与关闭选项 / Analytics privacy</a></div></>
     </>
   );

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "enabled": true,
+  "email": "zhangjunnan510@gmail.com",
+  "name": "Resume Assistant",
+  "siteId": "learn",
+  "tone": "light",
+  "sensitive": true,
+  "publicPaths": [
+    "/"
+  ],
+  "publicDir": "public",
+  "outputs": [
+    "out"
+  ],
+  "portableFiles": [],
+  "bundledRuntime": false,
+  "excludedOutputFiles": []
+}

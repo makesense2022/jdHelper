@@ -1,7 +1,11 @@
 {
   "siteName": "Resume Assistant",
   "siteUrl": "https://learn.zhangjunnan.chatgpt.site",
-  "pages": [],
-  "readablePath": "/read/",
-  "contentScope": "Actual public HTML; private, review and noindex pages excluded"
+  "pages": [
+    {
+      "path": "/",
+      "title": "Resume Assistant",
+      "description": "帮助整理简历的本地开发工具。私人简历和上传文档不进入访问分析。"
+    }
+  ]
 }

@@ -31,4 +31,4 @@ Disallow: /preview/
 Disallow: /fixtures/
 Disallow: /demos/
 
-Sitemap: https://learn-gray-ten.vercel.app/sitemap.xml
+Sitemap: https://learn.zhangjunnan.chatgpt.site/sitemap.xml
