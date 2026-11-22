@@ -1,6 +1,6 @@
 # Vercel Web Analytics
 
-Official @vercel/analytics 2.0.1 (MIT), bundled with an explicit public-path and production-origin guard. Bundle SHA256: 9278e679f357ba5df26547357f0c92b53f7b8c6565e522ad8d5268dbbf4c9a60. Source adapter: site-analytics/foundation/vercel-native.js. Origin: https://learn-gray-ten.vercel.app. Source baseline: 52f260e35a5d56786cfee902b753fa3bde0fbc4d; served deployment: dpl_Dz1HdwFekmBSwW19n42pvDqDuX4K.
+Official @vercel/analytics 2.0.1 (MIT), bundled with an explicit public-path and production-origin guard. Bundle SHA256: cef18f946f2af8a7dd49c258817e2998a863cb49647b2b5467fbfc1a4421fd8d. Source adapter: site-analytics/foundation/vercel-native.js. Origin: https://learn-gray-ten.vercel.app. Source baseline: 6aca0229dea601718f5438286e67460fc61e67e1; served deployment: dpl_9D2CAFCkbe3huyCPeWZ2AJKoTCkn.
 
 The official bundle is appended to the existing browser adapter, or loaded after React hydration by the existing root layout. Query strings, fragments and raw referrers are removed. No private input, identity call, Cookie or custom event is sent. DNT, GPC and the shared opt-out stop subsequent collection; previews and localhost are excluded. Existing PostHog code is preserved. No paid tier or Speed Insights is enabled.
 

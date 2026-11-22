@@ -26,7 +26,11 @@
       "cache": "same-model previous MPS outputs reused where source text was unchanged"
     },
     "sourceTextSentToNetwork": false,
-    "reviewState": "key interface wording reviewed; full editorial review not asserted"
+    "reviewState": "key interface wording reviewed; full editorial review not asserted",
+    "reviewedInterfaceCorrections": {
+      "date": "2026-10-15",
+      "scope": "Only exact entries recorded in the product review; not a full translation review."
+    }
   },
   "phrases": {
     "简历助手 - AI简历优化与匹配分析": {
@@ -207,7 +211,7 @@
     },
     "向客户端返回错误:": {
       "zh": "向客户端返回错误:",
-      "en": "Could not close temporary folder: %s"
+      "en": "Returning an error to the client:"
     },
     "开始处理PDF上传请求": {
       "zh": "开始处理PDF上传请求",
@@ -367,7 +371,7 @@
     },
     "无法解析文件内容": {
       "zh": "无法解析文件内容",
-      "en": "Could not close temporary folder: %s"
+      "en": "Could not read the file contents."
     },
     "文件上传错误:": {
       "zh": "文件上传错误:",

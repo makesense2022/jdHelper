@@ -2,7 +2,8 @@
   "siteId": "learn",
   "sdkVersion": "2.0.1",
   "productionOrigins": [
-    "https://learn-gray-ten.vercel.app"
+    "https://learn-gray-ten.vercel.app",
+    "https://learn-makesense2022s-projects.vercel.app"
   ],
   "excludedPathSegments": [
     "404",
@@ -38,12 +39,20 @@
     "success",
     "feedback",
     "listen",
-    "demos"
+    "demos",
+    "dashboard",
+    "workspace",
+    "messages",
+    "profile",
+    "users",
+    "tasks",
+    "todo",
+    "history"
   ],
   "publicRoutePatterns": [
     "^/$"
   ],
-  "bundleSha256": "9278e679f357ba5df26547357f0c92b53f7b8c6565e522ad8d5268dbbf4c9a60",
-  "sourceBaselineSha": "52f260e35a5d56786cfee902b753fa3bde0fbc4d",
-  "sourceBaselineDeployment": "dpl_Dz1HdwFekmBSwW19n42pvDqDuX4K"
+  "bundleSha256": "cef18f946f2af8a7dd49c258817e2998a863cb49647b2b5467fbfc1a4421fd8d",
+  "sourceBaselineSha": "6aca0229dea601718f5438286e67460fc61e67e1",
+  "sourceBaselineDeployment": "dpl_9D2CAFCkbe3huyCPeWZ2AJKoTCkn"
 }
