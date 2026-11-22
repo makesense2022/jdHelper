@@ -1,11 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import fs from 'fs';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.js';
+import * as pdfjsLib from 'pdfjs-dist';
 import { apiGuard } from '../../utils/api-guard';
-
-// 设置PDFJS的worker路径
-pdfjsLib.GlobalWorkerOptions.workerSrc = require.resolve('pdfjs-dist/legacy/build/pdf.worker.js');
+import { initPdfJS } from '../../utils/pdfParser';
 
 export const config = {
   api: {
@@ -13,57 +11,52 @@ export const config = {
   },
 };
 
-// 使用PDFJS从PDF中提取文本
-async function extractTextFromPDF(pdfBuffer: Buffer): Promise<string> {
+const imageOperators = new Set([
+  pdfjsLib.OPS.paintImageXObject,
+  pdfjsLib.OPS.paintImageXObjectRepeat,
+  pdfjsLib.OPS.paintInlineImageXObject,
+  pdfjsLib.OPS.paintInlineImageXObjectGroup,
+  pdfjsLib.OPS.paintImageMaskXObject,
+  pdfjsLib.OPS.paintImageMaskXObjectRepeat,
+  pdfjsLib.OPS.paintImageMaskXObjectGroup,
+]);
+
+async function extractTextFromPDF(pdfBuffer: Buffer): Promise<{ text: string; isScanned: boolean }> {
+  await initPdfJS();
+  const loadingTask = pdfjsLib.getDocument({
+    data: new Uint8Array(pdfBuffer),
+    disableFontFace: true,
+    isEvalSupported: false,
+    useSystemFonts: true,
+  });
   try {
-    // 将Buffer转换为Uint8Array
-    const uint8Array = new Uint8Array(pdfBuffer);
-    
-    // 加载PDF文档
-    const loadingTask = pdfjsLib.getDocument({ data: uint8Array });
     const pdf = await loadingTask.promise;
-    console.log(`PDF加载成功，共 ${pdf.numPages} 页`);
+    const pages: string[] = [];
+    let hasText = false;
+    let hasImagePage = false;
 
-    // 存储所有页面的文本
-    let allText = '';
-    let isEmptyTextDetected = false;
-
-    // 遍历所有页面提取文本
-    for (let i = 1; i <= pdf.numPages; i++) {
-      console.log(`正在处理第 ${i}/${pdf.numPages} 页...`);
-      const page = await pdf.getPage(i);
-      
-      // 获取页面信息以诊断是否为扫描件
-      const imageResources = await page.getOperatorList();
-      const hasImages = imageResources.fnArray.some((fn: number) => fn === pdfjsLib.OPS.paintImageXObject);
-      console.log(`第 ${i} 页包含图片: ${hasImages}`);
-      
+    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+      const page = await pdf.getPage(pageNumber);
       const textContent = await page.getTextContent();
-      
-      // 检查页面是否包含实际文本
-      if (textContent.items.length === 0 || textContent.items.every((item: any) => !item.str.trim())) {
-        console.log(`警告: 第 ${i} 页没有可提取的文本`);
-        isEmptyTextDetected = true;
-      }
-      
-      // 合并当前页的所有文本项
       const pageText = textContent.items
-        .map((item: any) => item.str)
-        .join(' ');
-      
-      allText += pageText + '\n\n';
+        .map((item) => ('str' in item ? item.str : ''))
+        .join(' ')
+        .trim();
+
+      pages.push(pageText);
+      if (pageText) hasText = true;
+      if (!hasText && !hasImagePage) {
+        const operators = await page.getOperatorList();
+        hasImagePage = operators.fnArray.some((operator: number) => imageOperators.has(operator));
+      }
     }
 
-    // 如果文本内容过少，判断是否为扫描件PDF
-    if (allText.trim().length < 100 || isEmptyTextDetected) {
-      console.log('诊断结果：这很可能是扫描件PDF，需要使用OCR技术提取文本');
-      return allText.trim() + "\n\n[PDF诊断：这似乎是扫描件PDF，建议使用OCR工具识别文本。您可以尝试在线OCR服务如ABBYY FineReader、Google Cloud Vision或Tesseract.js]";
-    }
-
-    return allText;
+    return { text: pages.join('\n\n').trim(), isScanned: !hasText && hasImagePage };
   } catch (error) {
     console.error('PDF解析错误:', error);
     throw new Error(`PDF解析失败: ${error instanceof Error ? error.message : '未知错误'}`);
+  } finally {
+    await loadingTask.destroy();
   }
 }
 
@@ -115,7 +108,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       
       // 使用PDFJS提取文本
       console.log('开始使用PDFJS解析PDF文件...');
-      const extractedText = await extractTextFromPDF(fileData);
+      const { text: extractedText, isScanned } = await extractTextFromPDF(fileData);
       console.log(`PDF解析完成，提取的文本长度: ${extractedText.length} 字符`);
       
       // 删除临时文件
@@ -128,7 +121,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({ 
         success: true, 
         text: extractedText,
-        isProbablyScannedPDF: extractedText.length < 100 && uploadedFile.size > 100000
+        isProbablyScannedPDF: isScanned
       });
     } catch (fileError) {
       console.error('文件处理错误:', fileError);
@@ -160,4 +153,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       success: false
     });
   }
-} 
+}

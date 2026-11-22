@@ -61,7 +61,11 @@ const FileUpload: React.FC<FileUploadProps> = ({ onTextExtracted, type, isLoadin
         throw new Error(data.error || '上传失败');
       }
       
-      if (!data.success || !data.text) {
+      if (data.isProbablyScannedPDF) {
+        throw new Error('这份 PDF 只有图片，无法提取文字。请先做文字识别，或上传可选中文字的 PDF。');
+      }
+
+      if (!data.success || typeof data.text !== 'string' || !data.text.trim()) {
         console.error('返回数据无效:', data);
         throw new Error('无法解析文件内容');
       }
@@ -157,4 +161,4 @@ const FileUpload: React.FC<FileUploadProps> = ({ onTextExtracted, type, isLoadin
   );
 };
 
-export default FileUpload; 
+export default FileUpload;
