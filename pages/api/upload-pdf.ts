@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import { extractTextFromPDF } from '../../utils/pdfParser';
+import { apiGuard } from '../../utils/api-guard';
 import fs from 'fs';
 
 export const config = {
@@ -12,6 +13,10 @@ export const config = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: '只支持POST请求' });
+  }
+
+  if (!apiGuard(req, res)) {
+    return;
   }
 
   let uploadedFile: formidable.File | undefined;

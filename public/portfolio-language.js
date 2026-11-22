@@ -102,17 +102,17 @@
     if (typeof source !== 'string' || !source.trim()) return source;
     const locale = normalize(targetLanguage) || language;
     const value = dictionary[normalized(source)]?.[locale];
-    if (typeof value === 'string') return source.replace(source.trim(), value);
+    if (typeof value === 'string') return source.replace(source.trim(), () => value);
     const plain = normalized(source);
     for (const template of templates) {
       const match = template.pattern.exec(plain);
       if (!match || typeof template[locale] !== 'string') continue;
       const values = Object.fromEntries(template.order.map((index, position) => [index, match[position + 1]]));
       const rendered = template[locale].replace(/\{(\d+)\}/g, (token, index) => values[Number(index)] ?? token);
-      return source.replace(source.trim(), rendered);
+      return source.replace(source.trim(), () => rendered);
     }
     const numberLabel = knownNumberLabel(plain, locale);
-    if (numberLabel !== null) return source.replace(source.trim(), numberLabel);
+    if (numberLabel !== null) return source.replace(source.trim(), () => numberLabel);
     // Public lists such as person names or category / region labels are joined
     // by the app at runtime. Translate only complete, known fragments.
     const pieces = plain.split(/(\s*[·／/：:—–，；]\s*)/);
@@ -127,7 +127,7 @@
         if (/[\u4e00-\u9fff]/.test(part)) unknownChinese = true;
         return part;
       }).join('');
-      if (changed && !unknownChinese) return source.replace(source.trim(), rendered);
+      if (changed && !unknownChinese) return source.replace(source.trim(), () => rendered);
     }
     return source;
   };
