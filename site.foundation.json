@@ -4,8 +4,8 @@
   "legacySiteId": "learn",
   "siteName": "Resume Assistant",
   "description": "帮助整理简历的本地开发工具。私人简历和上传文档不进入访问分析。",
-  "siteUrl": "https://learn.zhangjunnan.chatgpt.site",
-  "originEvidence": "Existing confirmed protected Vercel production alias",
+  "siteUrl": "https://cv.labisle.com",
+  "originEvidence": "2026-11-26: 统一对齐 labisle.com 公开子域名（来源 personal-blog/src/content/projects.json）",
   "indexing": "public",
   "framework": "next",
   "entries": [
